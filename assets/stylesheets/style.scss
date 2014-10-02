@@ -1,0 +1,206 @@
+@import "mixins";
+@import "reset";
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: $gray1;
+}
+
+.container {
+    width: 94%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+a,
+button {
+    color: $blue;
+    @include transition(all 0.2s ease-out);
+}
+
+img,
+canvas {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+}
+
+h1 {
+    font-size: em(30);
+    font-weight: 300;
+    
+    @include bp(840up) {
+        font-size: em(48);
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+h4 {
+    font-size: em(18);
+    font-weight: 400;
+    color: $gray8;
+}
+
+.btn {
+    display: inline-block;
+    height: em(40);
+    padding: 0 em(40);
+    color: $blue;
+    line-height: em(40);
+    text-decoration: none;
+    border-radius: 3px;
+    @include appearance(none);
+    
+    &:hover {
+        opacity: 0.8;
+    }
+    
+    i {
+        margin-right: em(4);
+        vertical-align: -2px;
+    }
+}
+
+.btn-secondary {
+    line-height: em(54,18);
+    background: none;
+    border: solid 3px $gray6;
+}
+
+.btn-primary,
+.btn-business {
+    color: #fff;
+    background: $blue;
+}
+
+.btn-consumers {
+    background: $consumers;
+}
+
+.hero {
+    padding: em(36) 0;
+    
+    p {
+        margin-bottom: 2em;
+    }
+        
+    @include bp(660up) {
+        padding: em(72) 0;
+        text-align: center;
+    }
+    
+    @include bp(840up) {
+        
+        p {
+            max-width: em(820,24);
+            margin-left: auto;
+            margin-right: auto;
+            font-size: em(24);
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+}
+
+.buckets {
+    margin: 0;
+    padding: 0;
+    @include clearfix;
+}
+        
+.bucket {
+    margin: 0 0 em(48);
+    list-style: none;
+
+    .icon {
+        padding: 0 em(20) em(20) 0;
+        margin-bottom: em(20);
+        border-bottom: solid 2px $grayE;
+        
+        @include bp(660up) {
+            padding: 0 em(20) em(20);
+        }
+    }
+
+    h3 {
+        font-size: em(18);
+        color: $darkblue;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    p {
+        font-size: em(12);
+        color: $gray6;
+    }
+    
+    @include bp(660up) {
+        float: left;
+        width: 28.5%;
+        margin: 0 7.25% em(72) 0;
+        text-align: center;
+        
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+}
+
+.case-studies-container {
+    margin: 0 auto em(24);
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.case-study-block {
+    display: block;
+    color: $darkblue;
+    text-decoration: none;
+    background: #fff;
+    box-shadow: 0 6px 0 $blue inset;
+
+    .case-study-logo {
+        padding: em(20);
+        height: em(120);
+        
+        &:before {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -0.25em;
+        }
+        
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            width: auto;
+            max-width: 95%;
+            max-height: 100%;
+        }
+        
+        @include bp(660up) {
+            height: em(170);
+        }
+    }
+    
+    .case-study-name {
+        padding: em(12);
+        background: #fcfcfc;
+        border-top: solid 1px $grayD;
+    }
+    
+    &:hover {
+        color: $blue;
+    }
+}

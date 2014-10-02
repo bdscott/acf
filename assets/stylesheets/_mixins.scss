@@ -1,0 +1,27 @@
+$darkblue: #1c3151;
+$blue: #00aef3;
+$lightblue: #F9FCFF;
+
+@mixin bp($point) {
+    @if $point == 420up {
+        @media (min-width: em(420)) { @content; }
+    }
+    @else if $point == 540up {
+        @media (min-width: em(540)) { @content; }
+    }
+    @else if $point == 660up {
+        @media (min-width: em(660)) { @content; }
+    }
+    @else if $point == 720up {
+        @media (min-width: em(720)) { @content; }
+    }
+    @else if $point == 840up {
+        @media (min-width: em(840)) { @content; }
+    }
+    @else if $point == 1020up {
+        @media (min-width: em(1020)) { @content; }
+    }
+    @else if $point == 1200up {
+        @media (min-width: em(1200)) { @content; }
+    }
+}
