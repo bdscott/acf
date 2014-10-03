@@ -943,6 +943,7 @@ footer[role="contentinfo"] {
   .sponsors ul.text-sponsors {
       list-style: none;
       margin-top: 2em;
+      padding: 0;
   }
   .sponsors .logo-list {
     margin: 0;
