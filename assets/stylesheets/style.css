@@ -657,7 +657,7 @@ header[role="banner"] {
   left: 0;
   height: 3.125em;
   padding: 0.75em 0;
-  background: #323232;
+  background: #ffffff;
   text-align: right; }
   header[role="banner"] .btn-primary {
     font-size: 0.625em; }
@@ -710,6 +710,37 @@ header[role="banner"] {
         width: 100%;
         margin: 0; } }
   .hero .container {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    max-width: 38.75em;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+footer {
+  color: #fff;
+  text-align: center;
+  position: relative; }
+
+footer img {
+  width: 200%;
+  max-width: none;
+  margin-left: -50%; }
+  @media (min-width: 26.25em) {
+    footer img {
+      width: 150%;
+      max-width: none;
+      margin-left: -25%; } }
+  @media (min-width: 33.75em) {
+    footer img {
+      width: 100%;
+      margin: 0; } }
+
+  footer .container {
     position: absolute;
     top: 50%;
     right: 0;
@@ -889,10 +920,8 @@ ul.question-call-outs li a {
   transition: height 0.35s ease-out; }
 
 footer[role="contentinfo"] {
-  padding: 1.5em 0;
   color: #fff;
   text-align: right;
-  background: #323232;
   *zoom: 1; }
   footer[role="contentinfo"]:before, footer[role="contentinfo"]:after {
     content: " ";
