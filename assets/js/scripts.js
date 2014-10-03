@@ -41,8 +41,8 @@ $(function() {
 
 $(document).ready(function() {
 
-    $('#speakers, #register').waypoint(function() {
+    $('.speakers, .registration').waypoint(function() {
         $(this).addClass("active");
-    }, { offset: '25%' });
+    }, { offset: '67%' });
 
 });
