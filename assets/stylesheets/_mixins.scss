@@ -1,6 +1,6 @@
-$darkblue: #1c3151;
-$blue: #00aef3;
-$lightblue: #F9FCFF;
+$pink: #D0216C;
+$blue: #1B849B;
+$dark: #323232;
 
 @mixin bp($point) {
     @if $point == 420up {
@@ -18,8 +18,8 @@ $lightblue: #F9FCFF;
     @else if $point == 840up {
         @media (min-width: em(840)) { @content; }
     }
-    @else if $point == 1020up {
-        @media (min-width: em(1020)) { @content; }
+    @else if $point == 980up {
+        @media (min-width: em(980)) { @content; }
     }
     @else if $point == 1200up {
         @media (min-width: em(1200)) { @content; }

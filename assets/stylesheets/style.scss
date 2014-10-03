@@ -1,3 +1,4 @@
+@import "bourbon";
 @import "mixins";
 @import "reset";
 
@@ -6,8 +7,7 @@ button,
 input,
 select,
 textarea {
-	font-family: "proxima-nova", "Proxima Nova", "Helvetica Neue", Arial, Helvetica, sans-serif;
-    color: $gray1;
+	font-family: "Source Sans Pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -18,12 +18,12 @@ textarea {
 
 a,
 button {
-    color: $blue;
+    color: $pink;
     @include transition(all 0.2s ease-out);
 }
 
 img,
-canvas {
+svg {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -32,175 +32,444 @@ canvas {
 p {
     line-height: 1.5;
     margin-bottom: 1.5em;
+    font-weight: 300;
 }
 
 h1 {
-    font-size: em(30);
-    font-weight: 300;
+    font-size: em(24);
+    font-weight: 200;
+    margin: 0 0 .5em;
     
+    @include bp(660up) {
+        font-size: em(32);
+    }
     @include bp(840up) {
         font-size: em(48);
         -webkit-font-smoothing: antialiased;
     }
 }
 
-h4 {
-    font-size: em(18);
-    font-weight: 400;
-    color: $gray8;
+h2 {
+    font-size: em(24);
+    font-weight: 200;
+    margin: 0 0 1em;
+    
+    @include bp(660up) {
+        font-size: em(30);
+    }
+}
+
+h3 {
+    font-size: em(24);
+    font-weight: 300;
 }
 
 .btn {
     display: inline-block;
     height: em(40);
-    padding: 0 em(40);
-    color: $blue;
-    line-height: em(40);
+    padding: 0 em(12);
+    color: #fff;
+    line-height: em(35);
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: none;
     border-radius: 3px;
+    border: solid 3px $pink;
     @include appearance(none);
     
     &:hover {
         opacity: 0.8;
     }
     
-    i {
-        margin-right: em(4);
-        vertical-align: -2px;
+    &.btn-primary {
+        line-height: em(40);
+        background: $pink;
+        border: none;
     }
 }
 
-.btn-secondary {
-    line-height: em(54,18);
-    background: none;
-    border: solid 3px $gray6;
+.half {
+    @include bp(840up) {
+        width: 50%;
+    }
+    
+    h2 {
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        margin-bottom: .3333333em;
+    }
 }
 
-.btn-primary,
-.btn-business {
-    color: #fff;
-    background: $blue;
+.quarter {
+    width: 50%;
+
+    p {
+        font-size: em(14);
+    }
+    
+    ul {
+        padding-left: 1em;
+    }
+
+    @include bp(840up) {
+        width: 25%;
+    }
 }
 
-.btn-consumers {
-    background: $consumers;
+#skrollr-body {
+    width: 100%;
+    overflow: hidden;
+}
+
+header[role="banner"] {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: em(50);
+    padding: em(12) 0;
+    background: $dark;
+    text-align: right;
+    
+    .btn-primary {
+        font-size: em(10);
+    }
+    
+    @include bp(540up) {
+        height: em(80);
+        padding: em(24) 0;
+        
+        .btn-primary {
+            font-size: em(12);
+        }
+    }
+}
+
+.logo {
+    float: left;
+    width: em(148);
+    height: em(28);
+    
+    @include bp(540up) {
+        width: em(180);
+        height: em(34);
+    }
 }
 
 .hero {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    
+    img {
+        width: 200%;
+        max-width: none;
+        margin-left: -50%;
+        
+        @include bp(420up) {
+            width: 150%;
+            max-width: none;
+            margin-left: -25%;
+        }
+        
+        @include bp(540up) {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    
+    .container {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        max-width: em(620);
+        @include transform(translateY(-50%));
+    }
+}
+
+.about {
     padding: em(36) 0;
     
-    p {
-        margin-bottom: 2em;
-    }
+    h2 {
+        max-width: em(620,24);
+        margin: 0 auto 1em;
         
-    @include bp(660up) {
-        padding: em(72) 0;
-        text-align: center;
+        @include bp(660up) {
+            text-align: center;
+            max-width: em(620,30);
+        }
     }
     
-    @include bp(840up) {
-        
-        p {
-            max-width: em(820,24);
-            margin-left: auto;
-            margin-right: auto;
-            font-size: em(24);
-            -webkit-font-smoothing: antialiased;
+    p {
+        max-width: em(620);
+        margin: 0 auto;
+
+        @include bp(660up) {
+            text-align: center;
         }
+    }
+    
+    @include bp(660up) {
+        padding: em(90) 0;
     }
 }
 
-.buckets {
-    margin: 0;
-    padding: 0;
+.split-section {
+    padding: em(24) 0;
+    background: $pink;
+    color: #fff;
     @include clearfix;
-}
+    
+    a {
+        color: #fff;
+        text-decoration: none;
         
-.bucket {
-    margin: 0 0 em(48);
-    list-style: none;
+        &.btn {
+            border: solid 2px #fff;
+        }
+    }
+    
+    .speaker {
+        position: relative;
+        float: left;
 
-    .icon {
-        padding: 0 em(20) em(20) 0;
-        margin-bottom: em(20);
-        border-bottom: solid 2px $grayE;
+        img {
+            width: 100%;
+            height: auto;
+        }
         
-        @include bp(660up) {
-            padding: 0 em(20) em(20);
+        h3 {
+            position: absolute;
+            z-index: 9;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: em(8) 5%;
+            font-size: em(18);
+            line-height: 1;
+            background: shade($pink,10%);
+            @include transition(background 0.2s ease-out);
+        }
+        
+        a {
+            
+            &:hover {
+                
+                h3 {
+                    background: shade($pink,30%);
+                }
+            }
+        }
+    }
+    
+    .speaker-one,
+    .participant {
+        background: shade($pink,10%);
+        box-shadow: 2px 0 6px rgba(0,0,0,0.1) inset;
+        
+        h3 {
+            background: shade($pink,10%);
         }
     }
 
-    h3 {
-        font-size: em(18);
-        color: $darkblue;
-        -webkit-font-smoothing: antialiased;
+    .speaker-two,
+    .vip {
+        background: shade($pink,20%);
+
+        h3 {
+            background: shade($pink,20%);
+        }
     }
 
+    .register-option {
+        position: relative;
+        width: 100%;
+        padding: em(24) em(36) em(84);
+        margin-top: em(24);
+        vertical-align: top;
+        
+        .register-cta {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: em(60,24);
+            font-size: em(24);
+            line-height: em(60,24);
+            text-transform: uppercase;
+            text-align: center;
+            background: rgba(0,0,0,0.1);
+            
+            &:hover {
+                background: rgba(0,0,0,0.15);
+            }
+        }
+        
+        @include bp(540up) {
+            float: left;
+            width: 50%;
+        }
+    }
+
+    @include bp(840up) {
+        padding: 0;
+        
+        .container {
+            width: 100%;
+            display: table;
+        }
+        
+        .half,
+        .quarter{
+            float: none;
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+        
+        .half {
+            padding: 0 em(36) 0 em(24);
+        }
+        
+        .register-option {
+            vertical-align: top;
+            width: 25%;
+        }
+    }
+    
+    @include bp(980up) {
+        
+        .half {
+            padding-left: 0;
+        }
+    }
+}
+
+.fade {
+    opacity: 0;
+    @include transition(opacity 0.15s ease-out);
+}
+
+.fade.in {
+    opacity: 1;
+}
+
+.collapse {
+    display: none;
+}
+
+.collapse.in {
+    display: block;
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    @include transition(height 0.35s ease-out);
+}
+
+footer[role="contentinfo"] {
+    padding: em(24) 0;
+    color: #fff;
+    text-align: right;
+    background: $dark;
+    @include clearfix;
+    
+    .logo {
+        float: none;
+        display: block;
+        margin: 0 auto 1em;
+        
+        @include bp(540up) {
+            float: left;
+            margin: 0;
+        }
+    }
+    
     p {
+        margin: 0;
         font-size: em(12);
-        color: $gray6;
+        text-align: center;
+        
+        @include bp(540up) {
+            text-align: right;
+        }
+    }
+}
+
+.faq {
+    padding: em(36) 0;
+    background: #f3f3f3;
+    
+    h2 {
+        text-align: center;
+        margin-bottom: em(12);
     }
     
     @include bp(660up) {
-        float: left;
-        width: 28.5%;
-        margin: 0 7.25% em(72) 0;
+        padding: em(90) 0;
+        
+        h2 {
+            margin-bottom: em(24);
+        }
+    }
+}
+
+.panel-title {
+    font-size: em(18);
+    padding-top: em(16,18);
+    margin-top: em(4,18);
+    border-top: solid 1px #C4C4C4;
+    
+    a {
+        color: $blue;
+        text-decoration: none;
+    }
+}
+
+.panel-heading {
+    padding-bottom: em(12);
+}
+
+.panel-body {
+    
+    p {
+        margin: 0 0 .75em;
+        padding-left: 1.5em;
+    }
+}
+
+.sponsors {
+    padding: em(36) 0;
+    
+    h2 {
+        text-align: center;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        line-height: 1;
+    }
+    
+    .logo-list {
+        margin: 0;
+        padding: 0;
         text-align: center;
         
-        &:nth-child(3n) {
-            margin-right: 0;
-        }
-    }
-}
-
-.case-studies-container {
-    margin: 0 auto em(24);
-    overflow: hidden;
-    text-align: center;
-    background: #fff;
-    border-radius: 3px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-}
-
-.case-study-block {
-    display: block;
-    color: $darkblue;
-    text-decoration: none;
-    background: #fff;
-    box-shadow: 0 6px 0 $blue inset;
-
-    .case-study-logo {
-        padding: em(20);
-        height: em(120);
-        
-        &:before {
-            content: "";
+        li {
             display: inline-block;
-            height: 100%;
-            vertical-align: middle;
-            margin-right: -0.25em;
-        }
-        
-        img {
-            display: inline-block;
-            vertical-align: middle;
-            width: auto;
-            max-width: 95%;
-            max-height: 100%;
-        }
-        
-        @include bp(660up) {
-            height: em(170);
+            margin: 0 em(18);
+            
+            @include bp(660up) {
+                margin: 0 em(30);
+            }
         }
     }
     
-    .case-study-name {
-        padding: em(12);
-        background: #fcfcfc;
-        border-top: solid 1px $grayD;
-    }
-    
-    &:hover {
-        color: $blue;
+    @include bp(660up) {
+        padding: em(90) 0;
     }
 }
