@@ -974,6 +974,26 @@ footer[role="contentinfo"] {
   margin: 0 0 .75em;
   padding-left: 1.5em; }
 
+.panel-body.schedule {
+  padding-left: 2em;
+}
+
+.panel-body.schedule table {
+  margin: 1em 0 2em;
+}
+
+.panel-body.schedule table tr {
+  border-bottom: 1px solid #dedede;
+}
+
+.panel-body.schedule table tr:last-child {
+  border-bottom: none;
+}
+
+.panel-body.schedule table tr td {
+  padding: 1em 1em 1em 0;
+}
+
 .sponsors {
   padding: 2.25em 0 1.5em;
   text-align: center; }
