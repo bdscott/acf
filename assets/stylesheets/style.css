@@ -1020,7 +1020,7 @@ footer[role="contentinfo"] {
         max-height: 2.5em; }
       @media (min-width: 41.25em) {
         .sponsors .logo-list li {
-          margin: 0 1.875em; } }
+          margin: 1.5em 1.875em; } }
   @media (min-width: 41.25em) {
     .sponsors {
       padding: 5.625em 0 4.875em; } }
