@@ -650,7 +650,7 @@ h3 {
   overflow: hidden; }
 
 header[role="banner"] {
-  position: fixed;
+  position: static;
   z-index: 999;
   top: 0;
   right: 0;
