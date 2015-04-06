@@ -594,11 +594,10 @@ h1 {
 h2 {
   font-size: 1.5em;
   font-weight: 200;
-  margin: 0 0 1em; }
+  margin: 0 0 0.5em; }
   @media (min-width: 41.25em) {
     h2 {
       font-size: 1.875em; } }
-
 h3 {
   font-size: 1.5em;
   font-weight: 300; }
@@ -663,6 +662,21 @@ header[role="banner"] {
     font-size: 0.625em; }
   header[role="banner"] .social-links {
     display: none; }
+  header[role="banner"] h1#toaster-logo {
+	height: 250px;
+	background: url(../images/toaster/title-bg.svg) no-repeat;
+	background-size: 450px;
+	background-position: top center;
+	padding-top: 65px;
+	padding-left: 40px;
+  	text-align: center; font-size: 3em; margin-bottom: 0;}
+  @media (max-width: 33.75em) {
+  	header[role="banner"] h1#toaster-logo {
+		background: transparent;
+		padding: 0;
+		height: auto;
+	}
+  }
   @media (min-width: 33.75em) {
     header[role="banner"] {
       height: 5em;
@@ -753,7 +767,7 @@ footer img {
     transform: translateY(-50%); }
 
 .about {
-  padding: 2.25em 0; }
+  padding: 1em 0 2.5em; }
   .about h1 {
     max-width: 25.83333em;
     margin: 1em auto .75em; }
@@ -763,13 +777,15 @@ footer img {
         max-width: 20.66667em; } }
   .about p {
     max-width: 38.75em;
-    margin: 0 auto; }
+    margin: 0 auto;
+	font-size: 1.25em; }
     @media (min-width: 41.25em) {
       .about p {
-        text-align: center; } }
-  @media (min-width: 41.25em) {
-    .about {
-      padding: 5.625em 0; } }
+        text-align: center; } } 
+   }
+   .about h2 {
+	margin-bottom: 0;
+   }
 
 ul.question-call-outs {
   list-style: none;
@@ -994,8 +1010,17 @@ footer[role="contentinfo"] {
   padding: 1em 1em 1em 0;
 }
 
+h2.register-cta {
+	text-align: center;
+	margin-top: 2em; }
+	@media (max-width: 33.75em) {
+		h2.register-cta a {
+			width: 100%;
+		}
+	}
+
 .sponsors {
-  padding: 2.25em 0 1.5em;
+  padding: 0 0 1.5em;
   text-align: center; }
   .sponsors h2 {
     text-align: center;
@@ -1009,18 +1034,19 @@ footer[role="contentinfo"] {
       padding: 0;
   }
   .sponsors .logo-list {
-    margin: 0;
+    margin: 1em 0 0 0;
     padding: 0;
     text-align: center; }
     .sponsors .logo-list li {
       display: inline-block;
-      margin: 0 1.125em 0.75em; }
+	  vertical-align: top;
+      margin: 1em 1.125em; }
       .sponsors .logo-list li img {
         width: auto;
-        max-height: 2.5em; }
+        height: 40px; }
       @media (min-width: 41.25em) {
         .sponsors .logo-list li {
           margin: 1.5em 1.875em; } }
   @media (min-width: 41.25em) {
     .sponsors {
-      padding: 5.625em 0 4.875em; } }
+      padding: 0 0 4.875em; } }
