@@ -1018,7 +1018,7 @@ footer[role="contentinfo"] {
 
 h2.register-cta {
 	text-align: center;
-	margin: 0 0 1.5em 0; }
+	margin: 0.5em 0 1.5em 0; }
 	@media (max-width: 33.75em) {
 		h2.register-cta a {
 			width: 100%;
