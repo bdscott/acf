@@ -660,7 +660,7 @@ header[role="banner"] {
   top: 0;
   right: 0;
   left: 0;
-  height: 3.125em;
+  height: auto;
   padding: 0.75em 0;
   background: #ffffff;
   text-align: right; }
@@ -685,7 +685,7 @@ header[role="banner"] {
   }
   @media (min-width: 33.75em) {
     header[role="banner"] {
-      height: 5em;
+      height: auto;
       padding: 1.5em 0; }
       header[role="banner"] .btn-primary {
         font-size: 0.75em;
