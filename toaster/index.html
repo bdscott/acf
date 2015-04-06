@@ -11,6 +11,9 @@
 		<!--[if lte IE 8]>
 		    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
         <![endif]-->
+			
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script src="../assets/js/scripts.js"></script>
   
 		<link href="../assets/images/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 		<link href="../assets/images/favicon.png" rel="shortcut icon">
@@ -21,8 +24,7 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
-        
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+       
 		
 		<!--[if lte IE 8]>
 			
@@ -30,34 +32,6 @@
 			<script src="../assets/js/vendor/respond.js"></script>
         <![endif]-->
 			
-		<script type="text/javascript" src="https://checkout.stripe.com/checkout.js"></script>
-		<script type="text/javascript">
-		$(function(){
-			  var handler = StripeCheckout.configure({
-			    key: 'pk_test_UjQ5P1Sokx6jOEA8O0Dj769j',
-			    image: '/img/documentation/checkout/marketplace.png',
-			    token: function(token){
-			      // Use the token to create the charge with a server-side script.
-			      // You can access the token ID with `token.id`
-			    }
-			  });
-
-			  $('#reserve-toaster').click(function(e) {
-			    // Open Checkout with further options
-			    handler.open({
-			      name: 'Your toaster is talking!',
-			      description: '2-day student registration',
-			      amount: 15000
-			    });
-			    e.preventDefault();
-			  });
-
-			  // Close Checkout on page navigation
-			  $(window).on('popstate', function() {
-			    handler.close();
-			  });
-		  });
-		</script>
 		
 		<title>Arkansas Code Festival</title>
   
