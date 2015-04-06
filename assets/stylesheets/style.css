@@ -625,6 +625,13 @@ h3 {
     line-height: 2.5em;
     background: #d0216c;
     border: none; }
+  .btn.btn-primary.disabled {
+	  background: #dedede;
+   }
+   .btn.btn-primary.disabled:hover {
+ 	  opacity: 1;
+	  cursor: default;
+    }
 
 @media (min-width: 52.5em) {
   .half {
@@ -649,7 +656,6 @@ h3 {
   overflow: hidden; }
 
 header[role="banner"] {
-  position: static;
   z-index: 999;
   top: 0;
   right: 0;
@@ -1012,7 +1018,7 @@ footer[role="contentinfo"] {
 
 h2.register-cta {
 	text-align: center;
-	margin-top: 2em; }
+	margin: 0 0 1.5em 0; }
 	@media (max-width: 33.75em) {
 		h2.register-cta a {
 			width: 100%;
