@@ -773,7 +773,7 @@ footer img {
     transform: translateY(-50%); }
 
 .about {
-  padding: 1em 0 2.5em; }
+  padding: 1em 0 0; }
   .about h1 {
     max-width: 25.83333em;
     margin: 1em auto .75em; }
@@ -787,7 +787,7 @@ footer img {
 	font-size: 1.25em; }
     @media (min-width: 41.25em) {
       .about p {
-        text-align: center; } } 
+        text-align: center; } }
    }
    .about h2 {
 	margin-bottom: 0;

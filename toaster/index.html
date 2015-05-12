@@ -7,34 +7,35 @@
 		<meta charset="utf-8">
 		<meta name="description" content="Arkansas Code Festival is a new conference in Fayetteville, Arkansas where you'll work with other students to build awesome projects with code.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-      
+
 		<!--[if lte IE 8]>
 		    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
         <![endif]-->
-			
+
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script src="../assets/js/scripts.js"></script>
-  
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
 		<link href="../assets/images/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 		<link href="../assets/images/favicon.png" rel="shortcut icon">
 		<!--[if IE]><link href="../assets/images/favicon.ico" rel="shortcut icon"><![endif]-->
-		
-		<link rel="stylesheet" href="../assets/stylesheets/style.css">    	
-		<link rel="stylesheet" href="../assets/fonts/ss-social-regular.css">    	
+
+		<link rel="stylesheet" href="../assets/stylesheets/style.css">
+		<link rel="stylesheet" href="../assets/fonts/ss-social-regular.css">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
-       
-		
+
+
 		<!--[if lte IE 8]>
-			
+
 			<script src="../assets/js/vendor/selectivizr.js"></script>
 			<script src="../assets/js/vendor/respond.js"></script>
         <![endif]-->
-			
-		
+
+
 		<title>Arkansas Code Festival</title>
-  
+
     </head>
 
 	<body>
@@ -49,53 +50,56 @@
 
                 <!--[if lte IE 8]>
                 <img class="logo" src="../assets/images/acf-logo.png" alt="Arkansas Code Festival">
-                <![endif]-->    
+                <![endif]-->
             </div>
-            
-        </header>                
+
+        </header>
 
         <div>
 
             <section class="about">
 
                 <div class="container">
-                    <h2>Interesting things happen when the real world meets the power of the Internet.</h2> 
+                    <h2>Interesting things happen when the real world meets the power of the Internet.</h2>
 					<h2>Over the course of two full days, your student will learn the foundations of engineering and robotics from experts in the field.</h2> <h2>No previous coding experience is necessary, and students will get their hands dirty on day one, building real projects with help from our instructors.</h2><br>
-					<h2 class="register-cta"><a href="#" class="btn btn-primary disabled">Register on May 1</a></h2>
-					<p><strong>The Details</strong></p>
-					<p>Grades 3-7<br/>July 7<sup>th</sup> &amp; 8<sup>th</sup>, 10am-4pm<br> The New School in Fayetteville, AR</p>
+          <p><strong>The Details</strong></p>
+					<p>Grades 3-8<br/>July 7<sup>th</sup> &amp; 8<sup>th</sup>, 10am-4pm<br> The New School in Fayetteville, AR</p>
 					<br>
 					<p>Students from all schools (or home schools) are welcome.</p>
-					<p>$150 camp registration includes lunch on both days.</p>
-					<p>Vegan and GF available.</p>
-					<p>All necessary computers and hardware provided.</p>
-					<br>
-					<p>Email any questions to <strong>ben@arkansas.cf</strong>.</p>
-					
-					
+					<p>Lunch provided, vegan and GF available.</p>
+					<p>All necessary computers and hardware provided.</p><br>
+          <p><strong>Camp registration is $125 for students who participated in the Arkansas Code Festival. This rate (a $25 discount) is valid through Friday, May 22<sup>nd</sup> when general registration opens.<!--Online registration is the only way to guarantee a spot for your student. If we have not reached capacity by July 7th, we will accept credit card payments during check-in and register additional students.--></strong></p><br>
+
+          <h2 class="register-cta"><a href="#" class="btn btn-primary" id="customButton">Reserve a spot</a></h2>
+
+
+
+
                 </div>
 
             </section>
-			
+
 			<section class="sponsors">
                 <div class="container">
 
                     <h3>Presented by</h3>
-    
+
                     <ul class="logo-list">
                         <li><a href="http://arkansas.cf"><img class="logo" src="../assets/images/toaster/acf.svg" alt="Arkansas Code Festival"></a></li>
-						
+
 						<li><a href="http://punchcardlabs.com"><img src="../assets/images/toaster/pc.svg" alt="Punchcard Labs"></a></li>
                     </ul>
+
+                    <p>Email any questions to <strong>ben@arkansas.cf</strong>.</p>
                 </div>
 
             </section>
-            
+
         </div>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>        
-        
+        <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -106,6 +110,31 @@
           ga('send', 'pageview');
 
         </script>
+        <script>
+          var handler = StripeCheckout.configure({
+            key: 'pk_live_pDHxd7lObo8Wi69gUCBydNDS',
+            image: '/img/documentation/checkout/marketplace.png',
+            token: function(token) {
+              // Use the token to create the charge with a server-side script.
+              // You can access the token ID with `token.id`
+            }
+          });
+
+          $('#customButton').on('click', function(e) {
+            // Open Checkout with further options
+            handler.open({
+              name: 'Your Toaster Is Talking!',
+              description: '2-day Student Registration',
+              amount: 12500
+            });
+            e.preventDefault();
+          });
+
+          // Close Checkout on page navigation
+          $(window).on('popstate', function() {
+            handler.close();
+          });
+        </script>
 	</body>
 
-</html>      
+</html>
